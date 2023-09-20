@@ -3536,15 +3536,17 @@ if (!Object.entries) {
 
 							if (columnObj.append_data_to_table_data === undefined) {
 								if (typeof column_data[0] === 'object') {
+									options_tmp = [];
 									for (ii = 0; ii < column_data.length; ii++) {
-										options_tmp = options_tmp.add($("<option>", {
+										options_tmp.push($("<option>", {
 											value: column_data[ii].value,
 											text: column_data[ii].label
 										}));
 									}
 								} else {
+									options_tmp = [];
 									for (ii = 0; ii < column_data.length; ii++) {
-										options_tmp = options_tmp.add($("<option>", {
+										options_tmp.push($("<option>", {
 											value: column_data[ii],
 											text: column_data[ii]
 										}));
